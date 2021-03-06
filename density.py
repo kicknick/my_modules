@@ -13,7 +13,7 @@ def cos(x):
         return math.cos(x);
 
 
-def getDistance(t1, f1, r1, t2, f2, r2):
+def getDistance(t1, f1, r1, t2, f2, r2):  #функция нахождения декартового расстояния по двум точкам 
 	R = 6371000;
 	x1 = (r1+R) * cos(t1) * cos(f1);
 	y1 = (r1+R) * cos(t1) * sin(f1);
@@ -38,7 +38,7 @@ def densityIntegral(p1, p2, ncfile):  #p1 - satellite, p2 - station
 	p1[1] = Geo_Radius[149]  # верхняя граница
 	p2[1] = Geo_Radius[0]    # нижняя граница
 
-
+	#интерполятор 
 	f = RegularGridInterpolator(points=(Geo_Lon, Geo_Radius, Geo_Lat), values=ED)
 
 
